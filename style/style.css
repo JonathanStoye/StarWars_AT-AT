@@ -1,0 +1,42 @@
+/* default: white background, sans serif font */
+body {
+    font-family: Arial,Helvetica;
+    background-color: white;
+    background-image: url("battlefront-at-at-walker-640x398.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* subsection titles for the parameter area */
+h3 {
+    color: #000055;
+    font-size: 14px;
+}
+
+/* region to display an error */
+#error {
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    display: none;
+}
+
+/* canvas to perform 3d graphcis */
+#drawing_container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* container to display editable parameters */
+#param_area {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* all input elements get a fixed width */
+input {
+    width: 80px;
+}

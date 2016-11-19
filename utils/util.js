@@ -29,8 +29,7 @@ define(["jquery"], (function($) {
         if($("#error")) {
             $('#error').text(msg);
             $('#error').css('display', 'block');
-        };
-
+        }
         // store message and object in Error object
         var e = new Error(msg);
         e.name = "Runtime error";
@@ -38,7 +37,7 @@ define(["jquery"], (function($) {
         e.obj = obj;
         return e;
 
-    }
+    };
 
     /**
      *   Display the message / object related to a fatal error
@@ -55,8 +54,7 @@ define(["jquery"], (function($) {
         if($("#error")) {
             $('#error').text(msg);
             $('#error').css('display', 'block');
-        };
-
+        }
         // also show error on the console
         window.console.log(msg);
 

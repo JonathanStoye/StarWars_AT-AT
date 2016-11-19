@@ -1,0 +1,23 @@
+{
+  "name": "at-at",
+  "version": "1.0.0",
+  "description": "An AT-AT with HTML5 canvas",
+  "main": "app.js",
+  "dependencies": {
+    "webserver": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanStoye/StarWars_AT-AT.git"
+  },
+  "author": "Jonathan Stoye",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/JonathanStoye/StarWars_AT-AT/issues"
+  },
+  "homepage": "https://github.com/JonathanStoye/StarWars_AT-AT#readme"
+}

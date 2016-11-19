@@ -26,6 +26,13 @@ define(["three"],
             this.positions = new Float32Array( items * 3);
             this.colors = new Float32Array( items * 3 );
 
+            this.indices = new Uint32Array(items);
+
+            for (var i = 0; i < this.indices.length; i++) {
+
+                this.indices[i] = i;
+            }
+
             var color = new THREE.Color();
 
             var n = 800, n2 = n/2;	// triangles spread in the cube
@@ -58,6 +65,10 @@ define(["three"],
                 this.colors[ i + 2 ] = color.b;
 
             }
+
+            this.getIndices = function () {
+                return this.indices;
+            };
 
             this.getPositions = function() {
                 return this.positions;

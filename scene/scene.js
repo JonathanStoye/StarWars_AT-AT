@@ -12,8 +12,8 @@
 
 
 /* requireJS module definition */
-define(["three", "util", "../shaders", "BufferGeometry", "random", "band"],
-    (function(THREE, util, shaders, BufferGeometry, Random, Band) {
+define(["three", "util", "shaders", "BufferGeometry"],
+    (function(THREE, util, shaders, BufferGeometry) {
 
         "use strict";
 
@@ -28,8 +28,8 @@ define(["three", "util", "../shaders", "BufferGeometry", "random", "band"],
             scope.renderer = renderer;
             scope.t = 0.0;
 
-            scope.camera = new THREE.PerspectiveCamera( 66, width / height, 0.1, 2000 );
-            scope.camera.position.z = 1000;
+            scope.camera = new THREE.PerspectiveCamera( 45, width / height, 0.1, 2500 );
+            scope.camera.position.z = 1800;
             scope.scene = new THREE.Scene();
 
             // Add a listener for 'keydown' events. By this listener, all key events will be
@@ -58,13 +58,29 @@ define(["three", "util", "../shaders", "BufferGeometry", "random", "band"],
                     scope.currentMesh.rotation.y += -0.05;
                     // Cursor up
                 }
-            };
-
+            }
             this.addBufferGeometry = function(bufferGeometry) {
 
                 scope.currentMesh = bufferGeometry.getMesh();
                 scope.scene.add( scope.currentMesh );
 
+            };
+
+            this.activateLight = function() {
+                var pointLight1 = new THREE.PointLight(0xffffff, 1, 10000);
+                pointLight1.position.set(1000, 0, 1000);
+                scope.scene.add(pointLight1);
+
+                var pointLight2 = new THREE.PointLight(0xffffff, 0.6, 10000);
+                pointLight2.position.set(0, 1000, 1000);
+                scope.scene.add(pointLight2);
+
+                var pointLight3 = new THREE.PointLight(0xffffff, 0.6, 10000);
+                pointLight3.position.set(1000, 1000, 0);
+                scope.scene.add(pointLight3);
+
+                var ambientLight = new THREE.AmbientLight(0x222222);
+                scope.scene.add(ambientLight);
             }
 
             /*
